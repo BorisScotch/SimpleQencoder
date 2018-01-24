@@ -1,0 +1,127 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <meta name="robots" content="noindex">
+  <title>CodePen - MktoEmail :: Emoji Subject</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  
+  
+  
+      <style>
+      .QPCreatorForm {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.QPCreatorForm FIELDSET {
+  width: 100%;
+  border: 1px dotted silver;
+  border-width: 1px 0 0 1px;
+  box-shadow: silver 2px 2px 2px;
+}
+
+.QPCreatorForm FIELDSET LEGEND {
+  font-family: "Source Code Pro","Courier New", monospace;
+  padding: 2px 7px;
+  font-size: 13.3333px;
+}
+
+.QPCreatorForm BUTTON {
+  box-sizing: content-box;
+}
+
+.QPCreatorForm BUTTON,
+INPUT {
+  display: block;
+  margin: 4px auto;
+  padding: 3px;
+  text-align: center;
+  border-radius: 2px;
+  border-width: 1px;
+  width: 220px;
+}
+
+.QPCreatorForm INPUT {
+  border: 1px solid gray;
+  font-family: "Source Code Pro","Courier New", monospace;
+  line-height: 36px;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  <script src="//cdpn-js.figureone.com/utf8.js"></script>
+<script src="//cdpn-js.figureone.com/quoted-printable.js?0001"></script>
+<form class="QPCreatorForm">
+  <fieldset><legend>Simple <em>Q</em> encoder</legend><input class="inUC" type="text" placeholder="Paste symbol here">
+    <button tabindex="1" class="generateQP" type="submit">Generate <em>Q</em> encoded snippet ↓</button>
+    <input readonly="" class="outQP" type="text" placeholder="Copy snippet from here">
+  </fieldset>
+</form>
+    <script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  
+  
+
+    <script>
+      /*
+ * Copyright (c) 2016-2017 Sanford Whiteman/TEKNKL <sandy@teknkl.com>
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+var
+  frmQPCreator = document.querySelector('FORM.QPCreatorForm'),
+  inUC = document.querySelector('INPUT.inUC'),
+  genQP = document.querySelector('BUTTON.generateQP'),
+  outQP = document.querySelector('INPUT.outQP');
+
+genQP.addEventListener('click', function(e) {
+  if (inUC.value) {
+    outQP.value =
+      '=?UTF-8?Q?' + quotedPrintable.encode(utf8.encode(inUC.value)) + '?=';
+  }
+});
+
+frmQPCreator.addEventListener('submit', function(e) {
+  e.preventDefault();
+});
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ </body></html>
